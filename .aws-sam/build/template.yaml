@@ -1,0 +1,41 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: lambda-websocket
+Transform:
+- AWS::Serverless-2016-10-31
+Resources:
+  ConnectFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: LambdaAWSSAMPoc_OnConnect
+      CodeUri: ConnectFunction
+      Handler: on_connect_lambda.lambda_handler
+      Runtime: python3.10
+      Architectures:
+      - x86_64
+      MemorySize: 128
+    Metadata:
+      SamResourceId: ConnectFunction
+  DisconnectFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: LambdaAWSSAMPoc_OnDisconnect
+      CodeUri: DisconnectFunction
+      Handler: on_disconnect_lambda.lambda_handler
+      Runtime: python3.10
+      Architectures:
+      - x86_64
+      MemorySize: 128
+    Metadata:
+      SamResourceId: DisconnectFunction
+  MessageFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: LambdaAWSSAMPoc_MessageSender
+      CodeUri: MessageFunction
+      Handler: on_send_message_lambda.lambda_handler
+      Runtime: python3.10
+      Architectures:
+      - x86_64
+      MemorySize: 128
+    Metadata:
+      SamResourceId: MessageFunction
