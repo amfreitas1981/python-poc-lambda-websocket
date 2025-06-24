@@ -2,9 +2,7 @@ import json
 import boto3
 import os
 
-# Sei que não é o Dynamo que será utilizado. Vou verificar qual será aplicado para substituir
 # API Gateway
-
 endpoint_url = os.environ.get("WS_ENDPOINT")
 table_name = os.environ.get("TABLE_NAME")
 
