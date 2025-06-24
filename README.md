@@ -5,7 +5,7 @@ Este projeto implementa uma arquitetura de comunicação em tempo real utilizand
 
 ## 🛠️ Tecnologias Utilizadas
 
-- **AWS Lambda (Python 3.12)**
+- **AWS Lambda (Python 3.10)**
 - **Amazon API Gateway (WebSocket)**
 - **Amazon DynamoDB**
 - **AWS SAM (Serverless Application Model)**

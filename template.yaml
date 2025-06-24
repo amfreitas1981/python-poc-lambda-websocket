@@ -1,6 +1,6 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Description: >-
-  lambda-websocket
+  python-poc-lambda-websocket
 Transform:
   - AWS::Serverless-2016-10-31
 
@@ -8,7 +8,7 @@ Resources:
   ConnectFunction:
     Type: AWS::Serverless::Function
     Properties:
-      FunctionName: LambdaAWSSAMPoc_OnConnect # Nome do lambda que será criado - Exemplo: lmb-hub-websocket-on-connect
+      FunctionName: LambdaAWSSAMPoc_OnConnect # Nome do lambda que será criado - Exemplo: python-poc-lambda-websocket-on-connect
       CodeUri: connect/
       Handler: on_connect_lambda.lambda_handler
       Runtime: python3.10
@@ -18,7 +18,7 @@ Resources:
   DisconnectFunction:
     Type: AWS::Serverless::Function
     Properties:
-      FunctionName: LambdaAWSSAMPoc_OnDisconnect # Nome do lambda que será criado - Exemplo: lmb-hub-websocket-on-disconnect
+      FunctionName: LambdaAWSSAMPoc_OnDisconnect # Nome do lambda que será criado - Exemplo: python-poc-lambda-websocket-on-disconnect
       CodeUri: disconnect/
       Handler: on_disconnect_lambda.lambda_handler
       Runtime: python3.10
@@ -28,7 +28,7 @@ Resources:
   MessageFunction:
     Type: AWS::Serverless::Function
     Properties:
-      FunctionName: LambdaAWSSAMPoc_MessageSender # Nome do lambda que será criado - Exemplo: lmb-hub-websocket-on-send-message
+      FunctionName: LambdaAWSSAMPoc_MessageSender # Nome do lambda que será criado - Exemplo: python-poc-lambda-websocket-on-send-message
       CodeUri: message/
       Handler: on_send_message_lambda.lambda_handler
       Runtime: python3.10
